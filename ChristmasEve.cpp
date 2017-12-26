@@ -4,8 +4,6 @@
 #include<iostream>
 #include<ctime>
 
-#define DAYS_30 {4,6,9,11}
-
 #define FEB 2
 
 // months with 30 days
@@ -32,7 +30,7 @@ int main(){
 	cout << "It's Christmas ";
 	if (diff < 0) {
 		diff = diff + 365;
-		diff = ((ltm->tm_year + 1901) % 400 == 0) || ((ltm->tm_year + 1901) % 4 == 0 && (ltm->tm_year + 1901) % 100 != 0) ? 1 : 0;
+		diff += ((ltm->tm_year + 1901) % 400 == 0) || ((ltm->tm_year + 1901) % 4 == 0 && (ltm->tm_year + 1901) % 100 != 0) ? 1 : 0;
 	}
 	if (diff == 0) {
 		cout << "day!";
